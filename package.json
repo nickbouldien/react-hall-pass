@@ -1,0 +1,25 @@
+{
+  "name": "react-hall-pass",
+  "version": "0.1.0",
+  "description": "A small React library to help with user permissions",
+  "repository": "https://github.com/nickbouldien/react-hall-pass",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "author": "nick bouldien",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "rollup -cw"
+  },
+  "devDependencies": {
+    "rollup": "^1.17.0",
+    "rollup-plugin-typescript2": "^0.22.0",
+    "typescript": "^3.5.3"
+  }
+}
