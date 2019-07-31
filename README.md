@@ -19,7 +19,7 @@ npm install --save react-hall-pass
 ```tsx
 import * as React from "react";
 
-import HallPass from "react-hall-pass";
+import { HallPass } from "react-hall-pass";
 
 class Example extends React.Component {
   const user = {
