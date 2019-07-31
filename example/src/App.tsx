@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Router, Link, RouteComponentProps } from "@reach/router";
 import AllPermissions from "./pages/AllPermissions";
 import Home from "./pages/Home";

@@ -1,7 +1,4 @@
-import * as viewerCanSee from "./viewerCanSee";
+import * as PermissionContext from "./PermissionContext";
+import HallPass from "./HallPass";
 
-function getRandomNumber(): number {
-  return Math.random();
-}
-
-export { getRandomNumber, viewerCanSee };
+export { HallPass, PermissionContext };

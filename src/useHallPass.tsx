@@ -1,6 +1,6 @@
-type Permission = string;
+export type Permission = string;
 
-function viewerCanSee(
+function useHallPass(
   userPermissions: Permission[],
   requiredPermissions: Permission[]
 ): boolean {
@@ -23,4 +23,4 @@ function viewerCanSee(
   );
 }
 
-export default viewerCanSee;
+export default useHallPass;
