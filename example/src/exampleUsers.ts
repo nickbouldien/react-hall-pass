@@ -1,21 +1,49 @@
-const fan1 = {
+export type User = {
+  name: string;
+  permissions: string[];
+};
+
+export interface Users {
+  [s: string]: User;
+}
+
+export const fan1: User = {
   name: "josh",
   permissions: []
 };
 
-const employee1 = {
+export const employee1 = {
   name: "rafael",
   permissions: ["DRAFT_PLAYER"]
 };
 
-const employee2 = {
+export const employee2 = {
   name: "dave",
   permissions: ["DRAFT_PLAYER", "PAY_PLAYER"]
 };
 
-const employee3 = {
+export const employee3 = {
   name: "jorge",
   permissions: ["DRAFT_PLAYER", "PAY_PLAYER", "SCHEDULE_GAME"]
 };
 
-export { fan1, employee1, employee2, employee3 };
+const users: Users = {
+  fan1: {
+    name: "josh",
+    permissions: []
+  },
+  employee1: {
+    name: "rafael",
+    permissions: ["DRAFT_PLAYER"]
+  },
+  employee2: {
+    name: "dave",
+    permissions: ["DRAFT_PLAYER", "PAY_PLAYER"]
+  },
+  employee3: {
+    name: "jorge",
+    permissions: ["DRAFT_PLAYER", "PAY_PLAYER", "SCHEDULE_GAME"]
+  }
+};
+
+export default users;

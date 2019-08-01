@@ -8,6 +8,17 @@ it in "read only mode", while employees see it in "edit mode"
 (they can see and click the button to schedule a game)
 */
 
+const emp1Styles = {
+  backgroundColor: "lightgray",
+  minHeight: "30px",
+  width: "40%"
+};
+
+const emp3Styles = {
+  ...emp1Styles,
+  backgroundColor: "skyblue"
+};
+
 function sheduleGame() {
   alert("you have scheduled a game!");
 }
@@ -22,25 +33,29 @@ const Schedule: React.FC = () => {
       <p>game on saturday vs Rio</p>
       <p>game on sunday vs Sydney</p>
 
-      {/* this will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
-      <HallPass
-        requiredPermissions={["SCHEDULE_GAME"]}
-        userPermissions={employee1.permissions}
-      >
-        <div>
+      <div className="employee-1" style={emp1Styles}>
+        Employee 1 (the button will not render)
+        {/* this will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
+        <HallPass
+          requiredPermissions={["SCHEDULE_GAME"]}
+          userPermissions={employee1.permissions}
+        >
           <button onClick={sheduleGame}>schedule a game</button>
-        </div>
-      </HallPass>
+        </HallPass>
+      </div>
 
-      {/* this _will_ render, as employee3 does have the correct permissions ("SCHEDULE_GAME") */}
-      <HallPass
-        requiredPermissions={["SCHEDULE_GAME"]}
-        userPermissions={employee3.permissions}
-      >
-        <div>
-          <button onClick={sheduleGame}>schedule a game</button>
-        </div>
-      </HallPass>
+      <div className="employee-3" style={emp3Styles}>
+        Employee 3:
+        {/* this _will_ render, as employee3 does have the correct permissions ("SCHEDULE_GAME") */}
+        <HallPass
+          requiredPermissions={["SCHEDULE_GAME"]}
+          userPermissions={employee3.permissions}
+        >
+          <div>
+            <button onClick={sheduleGame}>schedule a game</button>
+          </div>
+        </HallPass>
+      </div>
     </div>
   );
 };
