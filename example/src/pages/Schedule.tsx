@@ -8,6 +8,7 @@ it in "read only mode", while employees see it in "edit mode"
 (they can see and click the button to schedule a game)
 */
 
+// TODO - use something else for styling
 const emp1Styles = {
   backgroundColor: "lightgray",
   minHeight: "30px",

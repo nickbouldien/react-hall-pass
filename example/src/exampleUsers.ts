@@ -14,17 +14,17 @@ export const fan1: User = {
 
 export const employee1 = {
   name: "rafael",
-  permissions: ["DRAFT_PLAYER"]
+  permissions: ["PAY_PLAYER"]
 };
 
 export const employee2 = {
   name: "dave",
-  permissions: ["DRAFT_PLAYER", "PAY_PLAYER"]
+  permissions: ["PAY_PLAYER", "SCHEDULE_GAME"]
 };
 
 export const employee3 = {
   name: "jorge",
-  permissions: ["DRAFT_PLAYER", "PAY_PLAYER", "SCHEDULE_GAME"]
+  permissions: ["PAY_PLAYER", "SCHEDULE_GAME", "DRAFT_PLAYER"]
 };
 
 const users: Users = {
@@ -34,15 +34,15 @@ const users: Users = {
   },
   employee1: {
     name: "rafael",
-    permissions: ["DRAFT_PLAYER"]
+    permissions: ["PAY_PLAYER"]
   },
   employee2: {
     name: "dave",
-    permissions: ["DRAFT_PLAYER", "PAY_PLAYER"]
+    permissions: ["PAY_PLAYER", "SCHEDULE_GAME"]
   },
   employee3: {
     name: "jorge",
-    permissions: ["DRAFT_PLAYER", "PAY_PLAYER", "SCHEDULE_GAME"]
+    permissions: ["PAY_PLAYER", "SCHEDULE_GAME", "DRAFT_PLAYER"]
   }
 };
 

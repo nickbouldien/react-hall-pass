@@ -18,7 +18,7 @@ class AllPermissions extends React.Component {
   };
 
   render() {
-    const currentUser: User = exampleUsers[this.state.user]; //exampleUsers[this.state.user];
+    const currentUser: User = exampleUsers[this.state.user];
 
     return (
       <div className="all-permissions">
@@ -59,6 +59,7 @@ class AllPermissions extends React.Component {
             </button>
           </div>
         </HallPass>
+
         <HallPass
           requiredPermissions={["SCHEDULE_GAME"]}
           userPermissions={currentUser.permissions}
@@ -69,6 +70,7 @@ class AllPermissions extends React.Component {
             </button>
           </div>
         </HallPass>
+
         <HallPass
           requiredPermissions={["DRAFT_PLAYER"]}
           userPermissions={currentUser.permissions}
@@ -79,6 +81,41 @@ class AllPermissions extends React.Component {
             </button>
           </div>
         </HallPass>
+
+        <hr />
+
+        <p>only users with multiple required permissions will see the below</p>
+
+        <div>
+          <HallPass
+            requiredPermissions={["PAY_PLAYER", "SCHEDULE_GAME"]}
+            userPermissions={currentUser.permissions}
+          >
+            <p>pay player, schedule a game && draft player</p>
+            <button onClick={() => this.onClick("PAY_PLAYER, SCHEDULE_GAME")}>
+              do it
+            </button>
+          </HallPass>
+
+          <HallPass
+            requiredPermissions={[
+              "PAY_PLAYER",
+              "SCHEDULE_GAME",
+              "DRAFT_PLAYER"
+            ]}
+            userPermissions={currentUser.permissions}
+          >
+            <p>pay player, schedule a game && draft player</p>
+            <button
+              onClick={() =>
+                this.onClick("PAY_PLAYER, SCHEDULE_GAME, DRAFT_PLAYER")
+              }
+            >
+              do it all
+            </button>
+          </HallPass>
+        </div>
+
         <HallPass
           requiredPermissions={["SELL_TEAM"]}
           userPermissions={currentUser.permissions}
