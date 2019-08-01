@@ -24,41 +24,39 @@ function sheduleGame() {
   alert("you have scheduled a game!");
 }
 
-const Schedule: React.FC = () => {
-  return (
-    <div className="schedule">
-      <h1>Schedule</h1>
-      <p>game on monday vs LA</p>
-      <p>game on wednesday vs NY</p>
-      <p>game on friday vs London</p>
-      <p>game on saturday vs Rio</p>
-      <p>game on sunday vs Sydney</p>
+const Schedule: React.FC = () => (
+  <div className="schedule">
+    <h1>Schedule</h1>
+    <p>game on monday vs LA</p>
+    <p>game on wednesday vs NY</p>
+    <p>game on friday vs London</p>
+    <p>game on saturday vs Rio</p>
+    <p>game on sunday vs Sydney</p>
 
-      <div className="employee-1" style={emp1Styles}>
-        Employee 1 (the button will not render)
-        {/* this will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
-        <HallPass
-          requiredPermissions={["SCHEDULE_GAME"]}
-          userPermissions={employee1.permissions}
-        >
-          <button onClick={sheduleGame}>schedule a game</button>
-        </HallPass>
-      </div>
-
-      <div className="employee-3" style={emp3Styles}>
-        Employee 3:
-        {/* this _will_ render, as employee3 does have the correct permissions ("SCHEDULE_GAME") */}
-        <HallPass
-          requiredPermissions={["SCHEDULE_GAME"]}
-          userPermissions={employee3.permissions}
-        >
-          <div>
-            <button onClick={sheduleGame}>schedule a game</button>
-          </div>
-        </HallPass>
-      </div>
+    <div className="employee-1" style={emp1Styles}>
+      Employee 1 (the button will not render)
+      {/* this will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
+      <HallPass
+        requiredPermissions={["SCHEDULE_GAME"]}
+        userPermissions={employee1.permissions}
+      >
+        <button onClick={sheduleGame}>schedule a game</button>
+      </HallPass>
     </div>
-  );
-};
+
+    <div className="employee-3" style={emp3Styles}>
+      Employee 3:
+      {/* this _will_ render, as employee3 does have the correct permissions ("SCHEDULE_GAME") */}
+      <HallPass
+        requiredPermissions={["SCHEDULE_GAME"]}
+        userPermissions={employee3.permissions}
+      >
+        <div>
+          <button onClick={sheduleGame}>schedule a game</button>
+        </div>
+      </HallPass>
+    </div>
+  </div>
+);
 
 export default Schedule;
