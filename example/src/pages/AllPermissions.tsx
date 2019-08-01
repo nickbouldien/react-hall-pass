@@ -39,14 +39,14 @@ class AllPermissions extends React.Component {
         {currentUser.permissions.length === 0 ? (
           <p>select a user with permissions to see the buttons</p>
         ) : (
-          <p>
+          <div>
             the selected user's permissions:
             <ul>
               {currentUser.permissions.map(permission => (
                 <li key={permission}>{permission}</li>
               ))}
             </ul>
-          </p>
+          </div>
         )}
 
         <HallPass
