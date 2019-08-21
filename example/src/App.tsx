@@ -14,8 +14,8 @@ const Route: React.FC<Props> = ({ component: Component, ...rest }) => (
 );
 
 const App: React.FC<RouteComponentProps> = () => (
-  <div>
-    <nav>
+  <div className="app">
+    <nav className="app-header">
       <Link to="/">Home</Link>
       <Link to="schedule">Schedule</Link>
       <Link to="all-permissions">All Permissions</Link>

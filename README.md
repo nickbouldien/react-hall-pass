@@ -1,6 +1,6 @@
 # react-hall-pass
 
-> A small React library to help with user permissions
+> A small React library to help with user permissions. this was largely inspired by [react-lever](https://github.com/medipass/react-lever), a small library to help with feature flags
 
 ## Install
 
