@@ -1,7 +1,7 @@
 export type Permission = string;
 
 function useHallPass(
-  userPermissions: Permission[],
+  userPermissions: Permission[] | Permission,
   requiredPermissions: Permission[]
 ): boolean {
   if (!userPermissions) {
@@ -10,6 +10,9 @@ function useHallPass(
   if (!requiredPermissions) {
     throw new Error("You must supply an array of required permissions.");
   }
+
+  userPermissions =
+    typeof userPermissions === "string" ? [userPermissions] : userPermissions;
 
   if (requiredPermissions.length === 0) {
     // if no permissions are required, the user can see "it"

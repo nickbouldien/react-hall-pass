@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HallPass } from "react-hall-pass";
-import { employee1, employee2, employee3 } from "../exampleUsers";
+import { employee1, employee3, employee4, employee5 } from "../exampleUsers";
 
 /* 
 anybody (fans/employees) can get to this route/page, but fans see 
@@ -50,7 +50,7 @@ const Schedule: React.FC = () => (
     <p>game on sunday vs Sydney</p>
 
     <div className="employee-1" style={emp1Styles}>
-      Employee 1 (the button will not render)
+      <strong>Employee 1</strong> (the button will not render)
       {/* this will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
       <HallPass
         requiredPermissions={["SCHEDULE_GAME"]}
@@ -63,7 +63,7 @@ const Schedule: React.FC = () => (
     </div>
 
     <div className="employee-3" style={emp3Styles}>
-      Employee 3:
+      <strong>Employee 3</strong>
       {/* this _will_ render, as employee3 does have the correct permissions ("SCHEDULE_GAME") */}
       <HallPass
         requiredPermissions={["SCHEDULE_GAME"]}
@@ -76,13 +76,42 @@ const Schedule: React.FC = () => (
     </div>
 
     <div className="employee-1" style={emp1Styles}>
-      Employee 1 (the button will not render), but there will be fallback UI to
-      display
+      <strong>Employee 1</strong> (the button will not render), but there will
+      be fallback UI to display
       {/* the desired UI (the button) will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
       <HallPass
         requiredPermissions={["SCHEDULE_GAME"]}
         userPermissions={employee1.permissions}
         fallbackUI={<Fallback />}
+      >
+        <div>
+          <button onClick={sheduleGame}>schedule a game</button>
+        </div>
+      </HallPass>
+    </div>
+
+    <hr />
+
+    <h3>using a single string for the user permission</h3>
+
+    <div className="employee-4" style={emp1Styles}>
+      <strong>Employee 4</strong> the button will render
+      <HallPass
+        requiredPermissions={["SCHEDULE_GAME"]}
+        userPermissions={employee4.permissions}
+      >
+        <div>
+          <button onClick={sheduleGame}>schedule a game</button>
+        </div>
+      </HallPass>
+    </div>
+
+    <div className="employee-5" style={emp1Styles}>
+      <strong>Employee 5</strong> (the button will not render)
+      {/* the desired UI (the button) will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
+      <HallPass
+        requiredPermissions={["SCHEDULE_GAME"]}
+        userPermissions={employee5.permissions}
       >
         <div>
           <button onClick={sheduleGame}>schedule a game</button>

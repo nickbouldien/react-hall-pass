@@ -1,6 +1,6 @@
 export type User = {
   name: string;
-  permissions: string[];
+  permissions: string[] | string;
 };
 
 export interface Users {
@@ -27,6 +27,16 @@ export const employee3 = {
   permissions: ["PAY_PLAYER", "SCHEDULE_GAME", "DRAFT_PLAYER"]
 };
 
+export const employee4 = {
+  name: "thiago",
+  permissions: "SCHEDULE_GAME"
+};
+
+export const employee5 = {
+  name: "carlos",
+  permissions: "PAY_PLAYER"
+};
+
 const users: Users = {
   fan1: {
     name: "josh",
@@ -43,6 +53,14 @@ const users: Users = {
   employee3: {
     name: "jorge",
     permissions: ["PAY_PLAYER", "SCHEDULE_GAME", "DRAFT_PLAYER"]
+  },
+  employee4: {
+    name: "thiago",
+    permissions: "SCHEDULE_GAME"
+  },
+  employee5: {
+    name: "carlos",
+    permissions: "PAY_PLAYER"
   }
 };
 

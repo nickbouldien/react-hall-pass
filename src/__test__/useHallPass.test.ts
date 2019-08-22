@@ -11,6 +11,8 @@ const requiredPermissions3 = ["PAY_PLAYER", "SCHEDULE_GAME"];
 
 const requiredPermissions4 = ["PAY_PLAYER", "SCHEDULE_GAME", "DRAFT_PLAYER"];
 
+const stringPermission = "PAY_PLAYER";
+
 /* empty requiredPermissions */
 test("useHallPass returns true for empty array of requiredPermissions - employee", () => {
   const result = useHallPass(employee1.permissions, emptyRequiredPermissions);
@@ -41,6 +43,17 @@ test("useHallPass returns true for array of one requiredPermission that the user
 test("useHallPass returns true for array of one requiredPermission that the user does have - 3", () => {
   const result = useHallPass(employee3.permissions, requiredPermissions2);
   expect(result).toBe(true);
+});
+
+/* single permission string (not an array) */
+test("useHallPass returns true for a string of one userPermission that is in the required permissions array", () => {
+  const result = useHallPass(stringPermission, requiredPermissions1);
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns false for a string of one userPermission that is not in the required permissions array", () => {
+  const result = useHallPass(stringPermission, requiredPermissions2);
+  expect(result).toBe(false);
 });
 
 /* multiple requiredPermissions */

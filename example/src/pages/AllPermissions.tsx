@@ -42,9 +42,13 @@ class AllPermissions extends React.Component {
           <div>
             the selected user's permissions:
             <ul>
-              {currentUser.permissions.map(permission => (
-                <li key={permission}>{permission}</li>
-              ))}
+              {typeof currentUser.permissions === "string" ? (
+                <li>{currentUser.permissions}</li>
+              ) : (
+                currentUser.permissions.map(permission => (
+                  <li key={permission}>{permission}</li>
+                ))
+              )}
             </ul>
           </div>
         )}
