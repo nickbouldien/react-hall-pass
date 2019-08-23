@@ -3,8 +3,8 @@ import useHallPass, { Permission } from "./useHallPass";
 
 interface IProps {
   fallbackUI?: React.ReactElement;
-  requiredPermissions: Permission[];
-  userPermissions: Permission[] | Permission;
+  requiredPermissions: Permission | Permission[];
+  userPermissions: Permission | Permission[];
 }
 
 const HallPass: React.FC<IProps> = ({

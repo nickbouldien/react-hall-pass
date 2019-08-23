@@ -1,6 +1,8 @@
+export type Permission = string;
+
 export type User = {
   name: string;
-  permissions: string[] | string;
+  permissions: Permission | Permission[];
 };
 
 export interface Users {

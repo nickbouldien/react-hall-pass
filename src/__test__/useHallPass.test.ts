@@ -1,5 +1,5 @@
 import useHallPass from "../useHallPass";
-import { fan1, employee1, employee3 } from "./data";
+import { fan1, employee1, employee3, employee4, employee5 } from "./data";
 
 const emptyRequiredPermissions: string[] = [];
 
@@ -45,14 +45,36 @@ test("useHallPass returns true for array of one requiredPermission that the user
   expect(result).toBe(true);
 });
 
-/* single permission string (not an array) */
+/* single permission string (not an array) for userPermissions */
 test("useHallPass returns true for a string of one userPermission that is in the required permissions array", () => {
-  const result = useHallPass(stringPermission, requiredPermissions1);
+  const result = useHallPass(employee5.permissions, requiredPermissions1);
   expect(result).toBe(true);
 });
 
 test("useHallPass returns false for a string of one userPermission that is not in the required permissions array", () => {
-  const result = useHallPass(stringPermission, requiredPermissions2);
+  const result = useHallPass(employee4.permissions, requiredPermissions2);
+  expect(result).toBe(false);
+});
+
+/* single permission string (not an array) for requiredPermissions */
+test("useHallPass returns true for a string of one requiredPermission that is in the user's permissions array", () => {
+  const result = useHallPass(employee1.permissions, stringPermission);
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns false for a string of one userPermission that is not in the user's permissions array", () => {
+  const result = useHallPass(fan1.permissions, stringPermission);
+  expect(result).toBe(false);
+});
+
+/* single permission string for both requiredPermissions and userPermissions */
+test("useHallPass returns true for a string of one requiredPermission that is the user's one (string) permission", () => {
+  const result = useHallPass(employee5.permissions, stringPermission);
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns false for a string of one requiredPermission that is not the user's one (string) permission", () => {
+  const result = useHallPass(employee4.permissions, stringPermission);
   expect(result).toBe(false);
 });
 
