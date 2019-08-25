@@ -1,5 +1,4 @@
-function getRandomNumber(): number {
-  return Math.random();
-}
+import HallPass from "./HallPass";
+import useHallPass from "./useHallPass";
 
-export { getRandomNumber };
+export { HallPass, useHallPass };
