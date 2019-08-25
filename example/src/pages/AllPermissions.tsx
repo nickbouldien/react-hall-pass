@@ -95,9 +95,9 @@ class AllPermissions extends React.Component {
             requiredPermissions={["PAY_PLAYER", "SCHEDULE_GAME"]}
             userPermissions={currentUser.permissions}
           >
-            <p>pay player, schedule a game && draft player</p>
+            <p>pay player && schedule a game</p>
             <button onClick={() => this.onClick("PAY_PLAYER, SCHEDULE_GAME")}>
-              do it
+              do both
             </button>
           </HallPass>
 
