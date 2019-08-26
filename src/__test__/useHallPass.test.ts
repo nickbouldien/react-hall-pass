@@ -1,5 +1,13 @@
 import useHallPass from "../useHallPass";
-import { fan1, employee1, employee3, employee4, employee5 } from "./data";
+import {
+  fan1,
+  employee1,
+  employee3,
+  employee4,
+  employee5,
+  specialUser,
+  superAdmin
+} from "./data";
 
 const emptyRequiredPermissions: string[] = [];
 
@@ -96,5 +104,66 @@ test("useHallPass returns true for array of multiple requiredPermission that the
 
 test("useHallPass returns true for array of multiple requiredPermission that the user does have - 2", () => {
   const result = useHallPass(employee3.permissions, requiredPermissions4);
+  expect(result).toBe(true);
+});
+
+/* exceptions */
+test("useHallPass returns true for a user that has the exception (array)", () => {
+  const result = useHallPass(superAdmin.permissions, requiredPermissions3, [
+    "SUPER_ADMIN"
+  ]);
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns true for a user that has the exception (string)", () => {
+  const result = useHallPass(
+    superAdmin.permissions,
+    requiredPermissions4,
+    "SUPER_ADMIN"
+  );
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns true for a user that has the exception (in an array with other exceptions)", () => {
+  const result = useHallPass(superAdmin.permissions, requiredPermissions4, [
+    "SUPER_ADMIN",
+    "OTHER_EXCEPTION"
+  ]);
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns true for a user that has the exception (array) when the requiredPermissions is an empty array", () => {
+  const result = useHallPass(
+    superAdmin.permissions,
+    [],
+    ["SUPER_ADMIN", "OTHER_EXCEPTION"]
+  );
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns false for a user that does NOT have the required permissions nor the exception passed in the array of exceptions - 1", () => {
+  const result = useHallPass(superAdmin.permissions, requiredPermissions4, [
+    "OTHER_EXCEPTION"
+  ]);
+  expect(result).toBe(false);
+});
+
+test("useHallPass returns false for a user that does NOT have the required permissions nor the exception passed in the array of exceptions - 2", () => {
+  const result = useHallPass(employee1.permissions, requiredPermissions4, [
+    "OTHER_EXCEPTION"
+  ]);
+  expect(result).toBe(false);
+});
+
+test("useHallPass returns true for a user that doesn't have the exception, but the requiredPermissions array is empty", () => {
+  const result = useHallPass(employee1.permissions, [], ["OTHER_EXCEPTION"]);
+  expect(result).toBe(true);
+});
+
+test("useHallPass returns true for a user that has the required permissions and the exception passed in the array of exceptions", () => {
+  const result = useHallPass(specialUser.permissions, requiredPermissions3, [
+    "OTHER_EXCEPTION",
+    "SUPER_ADMIN"
+  ]);
   expect(result).toBe(true);
 });

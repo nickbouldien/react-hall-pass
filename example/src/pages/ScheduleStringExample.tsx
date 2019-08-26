@@ -24,11 +24,6 @@ const fallbackUIStyles = {
   width: "80%"
 };
 
-const emp3Styles = {
-  ...emp1Styles,
-  backgroundColor: "skyblue"
-};
-
 const noteSectionStyles = {
   color: "#282c34",
   marginBottom: "10px"

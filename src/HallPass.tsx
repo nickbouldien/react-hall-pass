@@ -2,6 +2,7 @@ import * as React from "react";
 import useHallPass, { Permission } from "./useHallPass";
 
 interface IProps {
+  exceptions?: Permission | Permission[];
   fallbackUI?: React.ReactElement;
   requiredPermissions: Permission | Permission[];
   userPermissions: Permission | Permission[];
@@ -9,13 +10,18 @@ interface IProps {
 
 const HallPass: React.FC<IProps> = ({
   children,
+  exceptions,
   fallbackUI,
   requiredPermissions,
   userPermissions
 }) => {
-  const showChildren = useHallPass(userPermissions, requiredPermissions);
+  const passesChecks = useHallPass(
+    userPermissions,
+    requiredPermissions,
+    exceptions
+  );
 
-  if (showChildren) {
+  if (passesChecks) {
     if (children) {
       return children as React.ReactElement<any>;
     }

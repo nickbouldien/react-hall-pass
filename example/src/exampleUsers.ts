@@ -39,13 +39,19 @@ export const employee5 = {
   permissions: "PAY_PLAYER"
 };
 
+export const superAdmin = {
+  name: "super admin",
+  permissions: "SUPER_ADMIN"
+};
+
 const users: Users = {
   fan1,
   employee1,
   employee2,
   employee3,
   employee4,
-  employee5
+  employee5,
+  superAdmin
 };
 
 export default users;
