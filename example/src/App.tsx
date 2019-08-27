@@ -5,6 +5,7 @@ import ExampleHelperComponents from "./pages/ExampleHelperComponents";
 import ExampleUseHallPassHook from "./pages/ExampleUseHallPassHook";
 import Exceptions from "./pages/Exceptions";
 import Home from "./pages/Home";
+import WarningExamples from "./pages/WarningExamples";
 import Schedule from "./pages/Schedule";
 import ScheduleStringExample from "./pages/ScheduleStringExample";
 import "./App.css";
@@ -34,6 +35,7 @@ const App: React.FC<RouteComponentProps> = () => (
       <Route component={Exceptions} path="exceptions" />
       <Route component={ExampleHelperComponents} path="helper-components" />
       <Route component={ExampleUseHallPassHook} path="hook" />
+      <Route component={WarningExamples} path="warning-examples" />
     </Router>
   </div>
 );
