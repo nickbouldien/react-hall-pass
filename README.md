@@ -16,6 +16,8 @@ npm install --save react-hall-pass
 
 ## Usage
 
+### Using the HallPass component {#component}
+
 ```tsx
 import * as React from "react";
 
@@ -46,6 +48,43 @@ class Example extends React.Component {
   }
 }
 ```
+
+### Using the hook directly {#hook}
+*this is what the `<HallPass>` component uses under the hood*
+
+```tsx
+import * as React from "react";
+import { useHallPass } from "react-hall-pass";
+
+const OtherExample: React.FC = () => {
+  const user = {
+    name: "example user",
+    permissions: ["PERMISSION_1", "PERMISSION_2"]
+  }
+
+  // const passesChecks = useHallPass(userPermissions, requiredPermissions, exceptions?);
+  const passesChecks = useHallPass(user.permissions, ["PERMISSION_1"]);
+
+  if (!passesChecks) {
+    return <p>you don't have the correct permissions</p>
+  }
+  return (
+    <div>
+      the user has the permissions required to view this content
+    </div>
+  )
+}
+```
+
+## parameters
+
+| param               | type                     | required |
+| ------------------- | ------------------------ | -------- |
+| userPermissions     | `Array<string> | string` | `true`   |
+| requiredPermissions | `Array<string> | string` | `true`   |
+| exceptions          | `Array<string> | string` | `false`  |
+
+*NOTE - currently no parameters have defaults*
 
 ## License
 
