@@ -9,27 +9,22 @@ const emp1Styles = {
   width: "50%"
 };
 
-const fallbackUIStyles = {
-  ...emp1Styles,
-  backgroundColor: "salmon",
-  marginTop: "10px",
-  width: "80%"
+const noteSectionStyles = {
+  color: "#282c34",
+  marginBottom: "10px"
 };
 
 function sheduleGame() {
   alert("you have scheduled a game!");
 }
 
-// const Fallback = () => (
-//   <div className="fallback-ui" style={fallbackUIStyles}>
-//     this is fallback UI that the user will see if they don't have the proper
-//     permissions to see the "desired" UI (the button to schedule a game)
-//   </div>
-// );
-
 const Schedule = () => (
   <main className="schedule">
     <h1 style={{ marginBottom: "10px" }}>Example to show the warnings</h1>
+
+    <div style={noteSectionStyles}>
+      <small>(check your console to see the warnings there)</small>
+    </div>
 
     <div className="employee-1" style={emp1Styles}>
       an example with no children
