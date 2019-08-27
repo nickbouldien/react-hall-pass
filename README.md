@@ -86,6 +86,9 @@ const OtherExample: React.FC = () => {
 
 *NOTE - currently no parameters have defaults*
 
+## Note about exceptions
+Be careful with the exceptions prop as it is powerful and can/will override the default behavior of stricly checking the userPermissions against the requiredPermissions. So in general, try not to use it unless you actually need it for an _exception_ to the norm. It is mainly meant to be an available/accessible escape route.
+
 ## License
 
 MIT © [nickbouldien](https://github.com/nickbouldien)
