@@ -16,7 +16,7 @@ npm install --save react-hall-pass
 
 ## Usage
 
-### Using the HallPass component {#component}
+### Using the HallPass component
 
 ```tsx
 import * as React from "react";
@@ -49,7 +49,7 @@ class Example extends React.Component {
 }
 ```
 
-### Using the hook directly {#hook}
+### Using the hook directly
 *this is what the `<HallPass>` component uses under the hood*
 
 ```tsx
@@ -78,11 +78,11 @@ const OtherExample: React.FC = () => {
 
 ## parameters
 
-| param               | type                     | required |
-| ------------------- | ------------------------ | -------- |
-| userPermissions     | `Array<string> | string` | `true`   |
-| requiredPermissions | `Array<string> | string` | `true`   |
-| exceptions          | `Array<string> | string` | `false`  |
+| param               | type                                     | required |
+| ------------------- | ---------------------------------------- | -------- |
+| userPermissions     | <code>Array<string> &#124; string</code> | `true`   |
+| requiredPermissions | <code>Array<string> &#124; string</code> | `true`   |
+| exceptions          | <code>Array<string> &#124; string</code> | `false`  |
 
 *NOTE - currently no parameters have defaults*
 
