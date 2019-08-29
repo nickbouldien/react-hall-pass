@@ -78,11 +78,11 @@ const OtherExample: React.FC = () => {
 
 ## parameters
 
-| param               | type                                     | required |
-| ------------------- | ---------------------------------------- | -------- |
-| userPermissions     | <code>Array<string> &#124; string</code> | `true`   |
-| requiredPermissions | <code>Array<string> &#124; string</code> | `true`   |
-| exceptions          | <code>Array<string> &#124; string</code> | `false`  |
+| param               | type                                       | required |
+| ------------------- | ------------------------------------------ | -------- |
+| userPermissions     | <code>Array`<string>` &#124; string</code> | `true`   |
+| requiredPermissions | <code>Array`<string>` &#124; string</code> | `true`   |
+| exceptions          | <code>Array`<string>` &#124; string</code> | `false`  |
 
 *NOTE - currently no parameters have defaults*
 
