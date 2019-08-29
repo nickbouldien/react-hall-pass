@@ -112,6 +112,21 @@ const Schedule: React.FC = () => (
         </div>
       </HallPass>
     </div>
+
+    <div className="employee-1" style={emp1Styles}>
+      <strong>Employee 1</strong> (the button will not render), but there will
+      be fallback UI to display
+      {/* the desired UI (the button) will not render, as employee1 doesn't have the correct permissions ("SCHEDULE_GAME") */}
+      <HallPass
+        requiredPermissions={["SCHEDULE_GAME"]}
+        userPermissions={employee1.permissions}
+        fallbackUI={<Fallback />}
+      >
+        <div>
+          <button onClick={sheduleGame}>schedule a game</button>
+        </div>
+      </HallPass>
+    </div>
   </main>
 );
 

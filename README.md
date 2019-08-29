@@ -16,6 +16,8 @@ npm install --save react-hall-pass
 
 ## Usage
 
+### Using the HallPass component
+
 ```tsx
 import * as React from "react";
 
@@ -46,6 +48,46 @@ class Example extends React.Component {
   }
 }
 ```
+
+### Using the hook directly
+*this is what the `<HallPass>` component uses under the hood*
+
+```tsx
+import * as React from "react";
+import { useHallPass } from "react-hall-pass";
+
+const OtherExample: React.FC = () => {
+  const user = {
+    name: "example user",
+    permissions: ["PERMISSION_1", "PERMISSION_2"]
+  }
+
+  // const passesChecks = useHallPass(userPermissions, requiredPermissions, exceptions?);
+  const passesChecks = useHallPass(user.permissions, ["PERMISSION_1"]);
+
+  if (!passesChecks) {
+    return <p>you don't have the correct permissions</p>
+  }
+  return (
+    <div>
+      the user has the permissions required to view this content
+    </div>
+  )
+}
+```
+
+## parameters
+
+| param               | type                                       | required |
+| ------------------- | ------------------------------------------ | -------- |
+| userPermissions     | <code>Array`<string>` &#124; string</code> | `true`   |
+| requiredPermissions | <code>Array`<string>` &#124; string</code> | `true`   |
+| exceptions          | <code>Array`<string>` &#124; string</code> | `false`  |
+
+*NOTE - currently no parameters have defaults*
+
+## Note about exceptions
+Be careful with the exceptions prop as it is powerful and can/will override the default behavior of stricly checking the userPermissions against the requiredPermissions. So in general, try not to use it unless you actually need it for an _exception_ to the norm. It is mainly meant to be an available/accessible escape route.
 
 ## License
 

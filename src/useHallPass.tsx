@@ -2,7 +2,8 @@ export type Permission = string;
 
 function useHallPass(
   userPermissions: Permission | Permission[],
-  requiredPermissions: Permission | Permission[]
+  requiredPermissions: Permission | Permission[],
+  exceptions?: Permission | Permission[]
 ): boolean {
   if (!userPermissions) {
     throw new Error(
@@ -28,11 +29,25 @@ function useHallPass(
     return true;
   }
 
-  return (
-    userPermissions.filter(permission =>
-      requiredPermissions.includes(permission)
-    ).length === requiredPermissions.length
-  );
+  let exceptionsToCheck: string[] | undefined;
+
+  if (exceptions) {
+    exceptionsToCheck =
+      typeof exceptions === "string" ? [exceptions] : exceptions;
+  }
+
+  let total = 0;
+  for (let permission of userPermissions) {
+    if (exceptionsToCheck && exceptionsToCheck.includes(permission)) {
+      // the user has the exception, so bail out early returning true
+      return true;
+    }
+    if (requiredPermissions.includes(permission)) {
+      total++;
+    }
+  }
+
+  return total === requiredPermissions.length;
 }
 
 export default useHallPass;

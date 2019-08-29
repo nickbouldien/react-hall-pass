@@ -36,3 +36,26 @@ export const employee5: User = {
   name: "carlos",
   permissions: "PAY_PLAYER"
 };
+
+export const superAdmin: User = {
+  name: "super admin",
+  permissions: "SUPER_ADMIN"
+};
+
+export const specialUser: User = {
+  name: "special user",
+  permissions: ["SUPER_ADMIN", "PAY_PLAYER", "SCHEDULE_GAME"]
+};
+
+const users: Users = {
+  fan1,
+  employee1,
+  employee2,
+  employee3,
+  employee4,
+  employee5,
+  specialUser,
+  superAdmin
+};
+
+export default users;

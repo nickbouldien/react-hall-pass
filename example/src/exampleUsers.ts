@@ -39,31 +39,19 @@ export const employee5 = {
   permissions: "PAY_PLAYER"
 };
 
+export const superAdmin = {
+  name: "super admin",
+  permissions: "SUPER_ADMIN"
+};
+
 const users: Users = {
-  fan1: {
-    name: "josh",
-    permissions: []
-  },
-  employee1: {
-    name: "rafael",
-    permissions: ["PAY_PLAYER"]
-  },
-  employee2: {
-    name: "dave",
-    permissions: ["PAY_PLAYER", "SCHEDULE_GAME"]
-  },
-  employee3: {
-    name: "jorge",
-    permissions: ["PAY_PLAYER", "SCHEDULE_GAME", "DRAFT_PLAYER"]
-  },
-  employee4: {
-    name: "thiago",
-    permissions: "SCHEDULE_GAME"
-  },
-  employee5: {
-    name: "carlos",
-    permissions: "PAY_PLAYER"
-  }
+  fan1,
+  employee1,
+  employee2,
+  employee3,
+  employee4,
+  employee5,
+  superAdmin
 };
 
 export default users;
