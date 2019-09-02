@@ -11,9 +11,9 @@ import {
   employee1,
   employee3,
   employee4,
-  employee5
+  employee5,
   // specialUser,
-  // superAdmin
+  superAdmin
 } from "./data";
 
 const About = () => <div id="about-page">You are on the about page</div>;
@@ -195,5 +195,38 @@ describe("HallPass with string permissions", () => {
 
     expect(wrapper.children()).toHaveLength(0);
     expect(wrapper.find("#about-page")).toHaveLength(0);
+  });
+});
+
+/* exceptions */
+describe("HallPass with exceptions", () => {
+  test("negative - HallPass with child, employee4 with string permission 'SCHEDULE_GAME' userPermission, requiredPermissions string of 'PAY_PLAYER'", () => {
+    const wrapper = mount(
+      <HallPass
+        userPermissions={employee4.permissions}
+        requiredPermissions={"PAY_PLAYER"}
+        exceptions={"SUPER_ADMIN"}
+      >
+        <About />
+      </HallPass>
+    ) as any;
+
+    expect(wrapper.children()).toHaveLength(0);
+    expect(wrapper.find("#about-page")).toHaveLength(0);
+  });
+
+  test("positive - HallPass with child, employee5 with string permission 'PAY_PLAYER' userPermission, requiredPermissions string of 'PAY_PLAYER'", () => {
+    const wrapper = mount(
+      <HallPass
+        userPermissions={superAdmin.permissions}
+        requiredPermissions={"PAY_PLAYER"}
+        exceptions={"SUPER_ADMIN"}
+      >
+        <About />
+      </HallPass>
+    ) as any;
+
+    expect(wrapper.children()).toHaveLength(1);
+    expect(wrapper.find("#about-page")).toHaveLength(1);
   });
 });
