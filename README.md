@@ -89,6 +89,22 @@ const OtherExample: React.FC = () => {
 ## Note about exceptions
 Be careful with the exceptions prop as it is powerful and can/will override the default behavior of stricly checking the userPermissions against the requiredPermissions. So in general, try not to use it unless you actually need it for an _exception_ to the norm. It is mainly meant to be an available/accessible escape route.
 
+## About
+I started working on this after looking at the afformentioned [react-lever](https://github.com/medipass/react-lever) library that helps with feature flags.  A few weeks into it, I realized that I hadn't really scoped out the landscape of libraries for permissions in react, but decided to continue making this after seeing a few that already existed. 
+
+A few goals I had:
+- render inside children (pass whatever you want to the `HallPass` component) - this is the "default" behavior
+- expose a hook that allows the developer to use the hook directly and not have to use the `HallPass` component
+-  write the library in TypeScript
+-  make sure that `HallPass` wasn't too opionated with regards to where it was used.  I've seen a few libraries that make some assumptions on if you're using a certain state management library (ie. redux) or not, etc. (React-Hall-Pass is of course opionated by the fact that you _have_ to pass an array (or string) and not some other custom data structure (though I guess that could change if it could be implemented well enough))
+-  make sure the library was well documented (I'm a big fan of well documented things and learning from examples, so I'd like to document this library well and have a decent amount of [examples](https://github.com/nickbouldien/react-hall-pass/tree/master/example) for potential users of the library)
+
+Also, this is one of the first things I've worked on in TypeScript, so feel free to help out if anything seems a bit off.
+
+## Contributing
+
+Thoughts/ideas/problems/fixes welcome. Please create an issue and we can discuss.
+
 ## License
 
 MIT © [nickbouldien](https://github.com/nickbouldien)
