@@ -1,10 +1,7 @@
 import React from "react";
 import { useHallPass } from "react-hall-pass";
 import { employee1, employee3 } from "../exampleUsers";
-
-function sheduleGame() {
-  alert("you have scheduled a game!");
-}
+import { sheduleGame } from "../utils";
 
 const ExampleUseHallPassHook: React.FC = () => {
   const employee1ScheduleGame = useHallPass(employee1.permissions, [
@@ -14,10 +11,6 @@ const ExampleUseHallPassHook: React.FC = () => {
   const employee3ScheduleGame = useHallPass(employee3.permissions, [
     "SCHEDULE_GAME"
   ]);
-
-  console.log("employee1ScheduleGame: ", employee1ScheduleGame);
-
-  console.log("employee3ScheduleGame: ", employee3ScheduleGame);
 
   return (
     <div className="schedule">

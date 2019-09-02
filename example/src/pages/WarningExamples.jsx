@@ -1,5 +1,6 @@
 import React from "react";
 import { HallPass } from "react-hall-pass";
+import { sheduleGame } from "../utils";
 
 const emp1Styles = {
   backgroundColor: "lightgray",
@@ -13,10 +14,6 @@ const noteSectionStyles = {
   color: "#282c34",
   marginBottom: "10px"
 };
-
-function sheduleGame() {
-  alert("you have scheduled a game!");
-}
 
 const Schedule = () => (
   <main className="schedule">

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { HallPass } from "react-hall-pass";
 import { employee1, employee3 } from "../exampleUsers";
+import { sheduleGame } from "../utils";
 
 /* 
 anybody (fans/employees) can get to this route/page, but fans see 
@@ -38,10 +39,6 @@ const scheduleSectionStyles = {
   color: "#282c34",
   marginBottom: "10px"
 };
-
-function sheduleGame() {
-  alert("you have scheduled a game!");
-}
 
 const Fallback = () => (
   <div className="fallback-ui" style={fallbackUIStyles}>
