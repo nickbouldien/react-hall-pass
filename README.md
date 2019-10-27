@@ -16,6 +16,9 @@ npm install --save react-hall-pass
 
 ## Usage
 
+### Example site
+- [https://react-hall-pass.nickbouldien.now.sh/](https://react-hall-pass.nickbouldien.now.sh/)
+
 ### Using the HallPass component
 
 ```tsx

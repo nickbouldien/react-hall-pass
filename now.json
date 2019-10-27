@@ -1,0 +1,22 @@
+{
+  "name": "react-hall-pass",
+  "builds": [
+    {
+      "src": "example/package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/example/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/example/index.html"
+    }
+  ]
+}
