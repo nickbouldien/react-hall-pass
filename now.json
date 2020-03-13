@@ -1,5 +1,6 @@
 {
   "name": "react-hall-pass",
+  "version": 2,
   "builds": [
     {
       "src": "example/package.json",
