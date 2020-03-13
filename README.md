@@ -1,6 +1,6 @@
 # react-hall-pass
 
-> A small React library to help with user permissions. this was largely inspired by [react-lever](https://github.com/medipass/react-lever), a small library to help with feature flags
+> A small React library to help with user permissions. This was largely inspired by [react-lever](https://github.com/medipass/react-lever), a small library to help with feature flags.
 
 ## Install
 
@@ -90,7 +90,7 @@ const OtherExample: React.FC = () => {
 *NOTE - currently no parameters have defaults*
 
 ## Note about exceptions
-Be careful with the exceptions prop as it is powerful and can/will override the default behavior of stricly checking the userPermissions against the requiredPermissions. So in general, try not to use it unless you actually need it for an _exception_ to the norm. It is mainly meant to be an available/accessible escape route.
+Be careful with the exceptions prop as it is powerful and can/will override the default behavior of strictly checking the `userPermissions` against the `requiredPermissions`. So in general, try not to use it unless you actually need it for an _exception_ to the norm. It is mainly meant to be an available/accessible escape route.
 
 ## About
 I started working on this after looking at the afformentioned [react-lever](https://github.com/medipass/react-lever) library that helps with feature flags.  A few weeks into it, I realized that I hadn't really scoped out the landscape of libraries for permissions in react, but decided to continue making this after seeing a few that already existed. 
