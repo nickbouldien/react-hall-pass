@@ -1,6 +1,6 @@
 {
   "name": "react-hall-pass",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A small React library to help with user permissions",
   "repository": "https://github.com/nickbouldien/react-hall-pass",
   "main": "dist/index.js",

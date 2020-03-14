@@ -7960,7 +7960,7 @@ react-error-overlay@^6.0.1:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.1.tgz#b8d3cf9bb991c02883225c48044cb3ee20413e0f"
   integrity sha512-V9yoTr6MeZXPPd4nV/05eCBvGH9cGzc52FN8fs0O0TVQ3HYYf1n7EgZVtHbldRq5xU9zEzoXIITjYNIfxDDdUw==
 
-react-hall-pass@0.1.0:
+react-hall-pass@0.2.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/react-hall-pass/-/react-hall-pass-0.1.0.tgz#087924758c5b07249d5cddc215f091fa796f692f"
   integrity sha512-Oy6Tny6muLC0beCjzQyYrdOCwWJvP6oW/kDy/Wh9/Wd4z3kVvTEFY8pDP2hb05ElydULQWRNpsS4DFrwlG1xFg==
