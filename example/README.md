@@ -1,6 +1,6 @@
 # React-Hall-Pass example
 
-This is a small app to demo some of the functionality of the react-hall-pass library.  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a small app to demo some of the functionality of the `react-hall-pass` library.  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
